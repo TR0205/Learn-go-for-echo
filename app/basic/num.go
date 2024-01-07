@@ -112,3 +112,24 @@ func Function(x, y int) (result1 int, result2 int) {
 	// ↑のように関数を定義し、最後に()をつけてあげると即時実行できるresult
 	// 変数に入れてからfunc()みたいに書かなくてもいい
 }
+
+func incrementGenerator() func() int {
+	x := 0
+	// クロージャは自身が定義されたスコープ内(incrementGenerator())の変数にアクセスでき、値を保持できる。
+	// そのためインクリメントされていく
+
+	return func() int {
+		x++
+		return x
+	}
+}
+
+// func main() {
+// 	// basic.Num()
+
+// 	counter := incrementGenerator()
+// 	fmt.Println(counter())
+// 	fmt.Println(counter())
+// 	fmt.Println(counter())
+// 	fmt.Println(counter())
+// }
