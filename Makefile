@@ -3,6 +3,8 @@ install:
 	@make up
 build:
 	docker compose build
+ps:
+	docker compose ps
 up:
 	docker compose up -d
 stop:

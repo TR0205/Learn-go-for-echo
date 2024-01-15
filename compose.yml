@@ -3,7 +3,7 @@ services:
   go:
     image: golang:1.21.5-bullseye
     ports:
-      - 8080:80
+      - 8080:8080
     volumes:
       - .:/go/src/app
     tty: true
